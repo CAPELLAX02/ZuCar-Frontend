@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
 import Hakkimizda from './pages/Hakkimizda';
-// import AdminPanel from './pages/AdminPanel';
+import AdminPanel from './pages/admin/AdminPanel';
 
 import OtoKaplama from './pages/OtoKaplama';
 import CamFilmi from './pages/CamFilmi';
@@ -19,7 +19,7 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/hakkimizda" element={<Hakkimizda />} />
-        {/* <Route path="/admin" element={<AdminPanel />} /> */}
+        <Route path="/admin" element={<AdminPanel />} />
         <Route path="/oto-kaplama" element={<OtoKaplama />} />
         <Route path="/cam-filmi" element={<CamFilmi />} />
         <Route path="/seramik-kaplama" element={<SeramikKaplama />} />
