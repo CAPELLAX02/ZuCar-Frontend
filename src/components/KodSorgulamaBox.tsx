@@ -81,7 +81,7 @@ const KodSorgulamaBox: React.FC = () => {
   setLoading(true);
   setResult({ type: 'placeholder' });
 
-  fetch(`http://localhost:3000/kod-sorgula/${fullCode}`)
+  fetch(`https://zucar-backend.onrender.com/kod-sorgula/${fullCode}`)
     .then((res) => {
       if (!res.ok) throw new Error('Kod bulunamadı');
       return res.json() as Promise<unknown>;  /* ✅ fetch generic yok, assert var */

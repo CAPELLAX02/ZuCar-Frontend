@@ -92,7 +92,7 @@ const AdminPanel: React.FC = () => {
 
   /* ------------------------------ AUTH ------------------------------ */
   const loginAdmin = () => {
-    fetch("http://localhost:3000/login", {
+    fetch("https://zucar-backend.onrender.com/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password }),
@@ -144,7 +144,7 @@ const AdminPanel: React.FC = () => {
     if (rawCode.length !== 16) return alert("Kod 16 haneli olmalı!");
     if (selectedServices.size === 0) return alert("En az bir hizmet seçin!");
 
-    fetch("http://localhost:3000/kaydet", {
+    fetch("https://zucar-backend.onrender.com/kaydet", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -176,7 +176,7 @@ const AdminPanel: React.FC = () => {
   };
 
   const kayitlariGetir = () => {
-    fetch("http://localhost:3000/tum-kayitlar", {
+    fetch("https://zucar-backend.onrender.com/tum-kayitlar", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((r) => r.json())
@@ -362,7 +362,7 @@ const AdminPanel: React.FC = () => {
                       <span
                         className="kod-sorgu-link"
                         style={{ cursor: "pointer" }}
-                        onClick={() => window.open(`http://localhost:3000/kod-sorgula/${kod}`, "_blank")}
+                        onClick={() => window.open(`https://zucar-backend.onrender.com/kod-sorgula/${kod}`, "_blank")}
                       >
                         Sorgula
                       </span>
