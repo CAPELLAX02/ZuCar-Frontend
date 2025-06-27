@@ -28,7 +28,11 @@ function Header() {
 
   return (
     <header className="site-header">
-      <div className="logo">ZuCar</div>
+      <div className="logo">
+        <img src="./assets/asd.png" alt="" style={{
+          width: '180px'
+        }} />
+      </div>
 
       <nav>
         <ul>
@@ -40,7 +44,7 @@ function Header() {
 
           <li>
             {/* hash link dışarıdan <a> olarak kalıyor */}
-            <a href="/#kod-sorgulama" className="nav-link">
+            <a href="#kod-sorgulama" className="nav-link">
               Garanti Sorgulama
             </a>
           </li>

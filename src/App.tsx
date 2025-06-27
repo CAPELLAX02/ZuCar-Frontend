@@ -12,10 +12,12 @@ import BoyasizGocuk from './pages/BoyasizGocuk';
 import PpfKaplama from './pages/PpfKaplama';
 import RenkDegisim from './pages/RenkDegisim';
 import KisiyeOzelTasarim from './pages/KisiyeOzelTasarim';
+import ScrollToTop from './components/ScrollToTop';
 
 const App: React.FC = () => {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/hakkimizda" element={<Hakkimizda />} />

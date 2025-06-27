@@ -122,7 +122,7 @@ const KodSorgulamaBox: React.FC = () => {
 
   /* İlk render – odak */
   useEffect(() => {
-    refs[0].current?.focus();
+    refs[0].current?.focus({ preventScroll: true });
   }, []);
 
   /* ---------- Render helpers ---------- */
