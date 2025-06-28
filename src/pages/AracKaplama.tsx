@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-const OtoKaplama: React.FC = () => (
+const AracKaplama: React.FC = () => (
   <>
     <Header />
 
@@ -14,7 +14,7 @@ const OtoKaplama: React.FC = () => (
 
     {/* ---------- HERO ---------- */}
     <section className="hero parallax">
-      <h1>Oto Kaplama Hizmeti</h1>
+      <h1>Araç Kaplama Hizmeti</h1>
       <p>Aracınıza yepyeni bir görünüm kazandıran profesyonel kaplama çözümleri.</p>
       <a href="#detaylar" className="button">
         Detayları Gör
@@ -25,14 +25,14 @@ const OtoKaplama: React.FC = () => (
     <section id="detaylar" className="hizmet-detay-section">
       <div className="detay-container">
         <div className="detay-header">
-          <h2>Neden Oto Kaplama Yaptırmalısınız?</h2>
+          <h2>Neden Araç Kaplama Yaptırmalısınız?</h2>
           <p>Aracınızı korumanın ve kişiselleştirmenin en etkili yolu.</p>
         </div>
 
         <div className="detay-content">
           {/* Sol görsel */}
           <div className="detay-image">
-            <img src={'assets/oto-kaplama.jpeg'} alt="Oto Kaplama Uygulaması" />
+            <img src={'assets/oto-kaplama.jpeg'} alt="Araç Kaplama Uygulaması" />
           </div>
 
           {/* Sağ liste */}
@@ -129,4 +129,4 @@ const OtoKaplama: React.FC = () => (
   </>
 );
 
-export default OtoKaplama;
+export default AracKaplama;

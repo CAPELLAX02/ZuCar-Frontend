@@ -38,7 +38,7 @@ const Harita: React.FC = () => {
           
           <div className="harita-address">
               <h4>
-                  Ekşioğlu Mah. Kuran Kursu Cd. 30. Sk. No: 14B, Çekmeköy / İstanbul
+                  Ekşioğlu Mah. Kuran Kursu Cd. 30. Sk. No: 14/B, <b>Çekmeköy / İstanbul</b>
           </h4>
         </div>
     </section>

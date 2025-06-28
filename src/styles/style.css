@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 html {
   scroll-behavior: smooth;
@@ -18,7 +18,7 @@ html {
 body,
 html {
   height: 100%;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Poppins', sans-serif;
   background: radial-gradient(circle, #1a1a1a, #000);
   color: white;
 }
@@ -79,6 +79,48 @@ nav a.active {
   font-weight: bold;
   text-shadow: 0 0 6px red;
 }
+/* -------------------------------------------------
+   HEADER – mobil düzeltmeleri
+--------------------------------------------------*/
+
+/* ❶ Masaüstü: logo solda, nav sağda (eldeki düzeni korur)  */
+.site-header { display:flex; justify-content:space-between; }
+
+/* ❷ Burger ikonunu SAĞA it  (yalnızca mobilde görünür)     */
+.burger { display:none; }
+.burger span { width:28px; height:3px; background:#ff0000; transition:.4s; }
+
+@media (max-width:899px) {
+  /* burger görünür ve sağda */
+  .burger { display:flex; flex-direction:column; gap:6px; margin-left: auto; background:none; border:none; cursor:pointer; z-index:1100; }
+  .burger.open span:nth-child(1){ transform:translateY(9px) rotate(45deg); }
+  .burger.open span:nth-child(2){ opacity:0; }
+  .burger.open span:nth-child(3){ transform:translateY(-9px) rotate(-45deg); }
+
+  /* logo sadece MOBİLDE ortada */
+  .logo{ position:absolute; left:50%; transform:translateX(-50%); z-index:1050; }
+
+.site-header nav{
+    position:fixed;        /* tam ekran panel  */
+    top:0; right:0;        /* SAĞ kenara sabitle */
+    height:100vh;
+    width:70%; max-width:320px;
+    background:#000;
+    padding-top:120px;
+    transform:translateX(100%);   /* ← kapalıyken SAĞA itilmiş */
+    transition:transform .4s ease;
+  }
+  .site-header nav.open{ transform:translateX(0); }  /* açıkken görünür */
+
+  /* dikey link listesi */
+  .site-header nav ul{ flex-direction:column; gap:32px; padding-left:40px; }
+
+  /* dropdown menü mobilde blok halinde görünür */
+  .dropdown:hover .dropdown-menu,
+  .dropdown-menu{ position:static; display:block; background:transparent; box-shadow:none; padding:0; }
+  .dropdown-menu li a{ padding:0; }
+}
+
 
 /* Hero Bölümü */
 .hero {

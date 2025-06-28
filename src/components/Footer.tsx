@@ -40,13 +40,13 @@ const Footer: React.FC = () => {
         <div className="footer-section">
           <h4>Hizmetlerimiz</h4>
           <ul className="footer-links">
-            <li><Link to="/oto-kaplama">Oto Kaplama</Link></li>
+            {/* <li><Link to="/arac-kaplama">Araç Kaplama</Link></li> */}
             <li><Link to="/cam-filmi">Cam Filmi</Link></li>
             <li><Link to="/seramik-kaplama">Seramik Kaplama</Link></li>
-            <li><Link to="/boyasiz-gocuk">Boyasız Göçük Düzeltme</Link></li>
+            {/* <li><Link to="/boyasiz-gocuk">Boyasız Göçük Düzeltme</Link></li> */}
             <li><Link to="/ppf-kaplama">PPF Kaplama</Link></li>
             <li><Link to="/renk-degisim">Renk Değişimi</Link></li>
-            <li><Link to="/kisiye-ozel-tasarim">Kişiye Özel Tasarım</Link></li>
+            {/* <li><Link to="/kisiye-ozel-tasarim">Kişiye Özel Tasarım</Link></li> */}
           </ul>
         </div>
 
@@ -91,7 +91,7 @@ const Footer: React.FC = () => {
       {/* --- Alt kısım --- */}
       <div className="footer-bottom">
         <div className="footer-bottom-content">
-          <p>&copy; 2025 ZuCar Oto Kaplama. Tüm hakları saklıdır.</p>
+          <p>&copy; 2025 ZuCar Araç Kaplama. Tüm hakları saklıdır.</p>
           <div className="footer-bottom-links">
             <a href="#">Kullanım Şartları</a>
             <a href="#">Gizlilik Politikası</a>

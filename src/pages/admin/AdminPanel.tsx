@@ -8,13 +8,13 @@ interface Kayit {
 }
 
 const initialServices = [
-  "Oto Kaplama Hizmeti",
+  // "Araç Kaplama Hizmeti",
   "Cam Filmi Hizmeti",
   "Seramik Kaplama Hizmeti",
-  "Boyasız Göçük Düzeltme",
+  // "Boyasız Göçük Düzeltme",
   "PPF Kaplama Hizmeti",
   "Renk Değişim Hizmeti",
-  "Kişiye Özel Tasarım",
+  // "Kişiye Özel Tasarım",
 ];
 
 const AdminPanel: React.FC = () => {
@@ -23,9 +23,7 @@ const AdminPanel: React.FC = () => {
   const BASE_CODE_FMT = "2378 5612 8442 0001";
   
   /* ------------------------------ STATE ------------------------------ */
-  const [token, setToken] = useState<string | null>(
-    localStorage.getItem("adminToken")
-  );
+  const [token, setToken] = useState<string | null>(localStorage.getItem("adminToken"));
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 

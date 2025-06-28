@@ -5,7 +5,7 @@ import Home from './pages/Home';
 import Hakkimizda from './pages/Hakkimizda';
 import AdminPanel from './pages/admin/AdminPanel';
 
-import OtoKaplama from './pages/OtoKaplama';
+import AracKaplama from './pages/AracKaplama';
 import CamFilmi from './pages/CamFilmi';
 import SeramikKaplama from './pages/SeramikKaplama';
 import BoyasizGocuk from './pages/BoyasizGocuk';
@@ -22,13 +22,13 @@ const App: React.FC = () => {
         <Route path="/" element={<Home />} />
         <Route path="/hakkimizda" element={<Hakkimizda />} />
         <Route path="/admin" element={<AdminPanel />} />
-        <Route path="/oto-kaplama" element={<OtoKaplama />} />
+        {/* <Route path="/arac-kaplama" element={<AracKaplama />} /> */}
         <Route path="/cam-filmi" element={<CamFilmi />} />
         <Route path="/seramik-kaplama" element={<SeramikKaplama />} />
-        <Route path="/boyasiz-gocuk" element={<BoyasizGocuk />} />
+        {/* <Route path="/boyasiz-gocuk" element={<BoyasizGocuk />} /> */}
         <Route path="/ppf-kaplama" element={<PpfKaplama />} />
         <Route path="/renk-degisim" element={<RenkDegisim />} />
-        <Route path="/kisiye-ozel-tasarim" element={<KisiyeOzelTasarim />} />
+        {/* <Route path="/kisiye-ozel-tasarim" element={<KisiyeOzelTasarim />} /> */}
       </Routes>
     </BrowserRouter>
   );

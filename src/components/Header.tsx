@@ -2,8 +2,9 @@
 import { useState, useMemo } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 
-const hizmetYolları = [
-  '/oto-kaplama',
+/** Alt menü yolları (“Hizmetlerimiz” grubuna dâhil) */
+const hizmetYollari = [
+  '/arac-kaplama',
   '/cam-filmi',
   '/seramik-kaplama',
   '/boyasiz-gocuk',
@@ -13,29 +14,47 @@ const hizmetYolları = [
 ];
 
 function Header() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);      // kayar menü açık/kapalı
   const { pathname } = useLocation();
 
-  /** Alt menüdeki sayfalardan biri açıksa, üst “Hizmetlerimiz” sekmesini de aktif göster */
+  /* Hizmetler sekmesi aktif mi? (alt sayfalardan biri ise) */
   const hizmetlerActive = useMemo(
-    () => hizmetYolları.some((p) => pathname.startsWith(p)),
-    [pathname],
+    () => hizmetYollari.some((p) => pathname.startsWith(p)),
+    [pathname]
   );
 
-  /* Menü linkleri için ortak sınıf üretici */
+  /* NavLink ortak sınıf üreticisi */
   const linkClass = ({ isActive }: { isActive: boolean }) =>
     `nav-link${isActive ? ' nav-active' : ''}`;
 
+  /* Küçük ekranda linke tıklayınca menüyü kapat */
+  const handleNavClick = () => setMobileOpen(false);
+
   return (
     <header className="site-header">
+      {/* Burger / Sandwich ikon – sadece mobilde görünür */}
+      <button
+        className={`burger${mobileOpen ? ' open' : ''}`}
+        onClick={() => setMobileOpen(!mobileOpen)}
+        aria-label="Menüyü Aç / Kapat"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      {/* Logo – masaüstünde solda, mobilde ortada */}
       <div className="logo">
-        <img src="./assets/asd.png" alt="" style={{
-          width: '180px'
-        }} />
+        {/* İsterseniz img kullanın */}
+        {/* <img src="/assets/asd.png" alt="ZuCar Logo" /> */}
+        <span>ZuCar</span>
       </div>
 
-      <nav>
-        <ul>
+      {/* NAV
+         • Masaüstü: inline (flex)   • Mobil: soldan kayan panel (CSS ile)
+      */}
+      <nav className={mobileOpen ? 'open' : ''}>
+        <ul onClick={handleNavClick}>
           <li>
             <NavLink to="/" end className={linkClass}>
               Ana Sayfa
@@ -43,61 +62,40 @@ function Header() {
           </li>
 
           <li>
-            {/* hash link dışarıdan <a> olarak kalıyor */}
+            {/* Hash link: <a> olarak kalır */}
             <a href="#kod-sorgulama" className="nav-link">
               Garanti Sorgulama
             </a>
           </li>
 
-          {/* ---------- Hizmetlerimiz dropdown ---------- */}
-          <li
-            className="dropdown"
-            onMouseEnter={() => setIsOpen(true)}
-            onMouseLeave={() => setIsOpen(false)}
-          >
+          {/* ---------- Hizmetlerimiz (dropdown) ---------- */}
+          <li className="dropdown">
             <span className={`dropdown-toggle${hizmetlerActive ? ' nav-active' : ''}`}>
               Hizmetlerimiz ▾
             </span>
 
-            {isOpen && (
-              <ul className="dropdown-menu">
-                <li>
-                  <NavLink to="/oto-kaplama" className={linkClass}>
-                    Oto Kaplama Hizmeti
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/cam-filmi" className={linkClass}>
-                    Cam Filmi Hizmeti
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/seramik-kaplama" className={linkClass}>
-                    Seramik Kaplama Hizmeti
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/boyasiz-gocuk" className={linkClass}>
-                    Boyasız Göçük Düzeltme
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/ppf-kaplama" className={linkClass}>
-                    PPF Kaplama Hizmeti
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/renk-degisim" className={linkClass}>
-                    Renk Değişim Hizmeti
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/kisiye-ozel-tasarim" className={linkClass}>
-                    Kişiye Özel Tasarım
-                  </NavLink>
-                </li>
-              </ul>
-            )}
+            <ul className="dropdown-menu">
+              <li>
+                <NavLink to="/cam-filmi" className={linkClass}>
+                  Cam Filmi Hizmeti
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/seramik-kaplama" className={linkClass}>
+                  Seramik Kaplama Hizmeti
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/ppf-kaplama" className={linkClass}>
+                  PPF Kaplama Hizmeti
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/renk-degisim" className={linkClass}>
+                  Renk Değişim Hizmeti
+                </NavLink>
+              </li>
+            </ul>
           </li>
 
           <li>

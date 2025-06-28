@@ -24,21 +24,21 @@ type Slide = {
 
 /* ——— 7 temel kart ——— */
 const baseSlides: Slide[] = [
-  {
-    src: 'assets/oto-kaplama.jpeg',
-    alt: 'Oto Kaplama',
-    fallback: '🚗',
-    title: 'Oto Kaplama',
-    text: 'Aracınıza yeni bir görünüm kazandıran kaliteli kaplama hizmeti.',
-    path: '/oto-kaplama',
-    overlay: (
-      <>
-        <path d="M12 2L2 7L12 12L22 7L12 2Z" />
-        <path d="M2 17L12 22L22 17" />
-        <path d="M2 12L12 17L22 12" />
-      </>
-    ),
-  },
+  // {
+  //   src: 'assets/oto-kaplama.jpeg',
+  //   alt: 'Araç Kaplama',
+  //   fallback: '🚗',
+  //   title: 'Araç Kaplama',
+  //   text: 'Aracınıza yeni bir görünüm kazandıran kaliteli kaplama hizmeti.',
+  //   path: '/oto-kaplama',
+  //   overlay: (
+  //     <>
+  //       <path d="M12 2L2 7L12 12L22 7L12 2Z" />
+  //       <path d="M2 17L12 22L22 17" />
+  //       <path d="M2 12L12 17L22 12" />
+  //     </>
+  //   ),
+  // },
   {
     src: 'assets/cam-filmi.jpg',
     alt: 'Cam Filmi',
@@ -67,17 +67,17 @@ const baseSlides: Slide[] = [
       </>
     ),
   },
-  {
-    src: 'assets/boyasiz-gocuk.jpg',
-    alt: 'Boyasız Göçük Düzeltme',
-    fallback: '🔧',
-    title: 'Boyasız Göçük Düzeltme',
-    text: 'Kaportadaki göçükleri boyaya zarar vermeden onarır.',
-    path: '/boyasiz-gocuk',
-    overlay: (
-      <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" strokeLinecap="round" strokeLinejoin="round" />
-    ),
-  },
+  // {
+  //   src: 'assets/boyasiz-gocuk.jpg',
+  //   alt: 'Boyasız Göçük Düzeltme',
+  //   fallback: '🔧',
+  //   title: 'Boyasız Göçük Düzeltme',
+  //   text: 'Kaportadaki göçükleri boyaya zarar vermeden onarır.',
+  //   path: '/boyasiz-gocuk',
+  //   overlay: (
+  //     <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" strokeLinecap="round" strokeLinejoin="round" />
+  //   ),
+  // },
   {
     src: 'assets/oto-kaplama.jpeg',
     alt: 'PPF Kaplama',
@@ -100,20 +100,20 @@ const baseSlides: Slide[] = [
       <path d="M12 2.61a5.04 5.04 0 0 0-4.33 7.39L3 15v4h4l5-5.04a5.04 5.04 0 0 0 2.33-7.35A5.02 5.02 0 0 0 12 2.61zM7 17l-1-1 4-4 1 1-4 4z" strokeLinecap="round" strokeLinejoin="round" />
     ),
   },
-  {
-    src: 'assets/kisiye-ozel-tasarim.jpeg',
-    alt: 'Kişiye Özel Tasarım',
-    fallback: '✍️',
-    title: 'Kişiye Özel Tasarım',
-    text: 'Hayalinizdeki tasarımı aracınıza taşıyarak fark yaratın.',
-    path: '/kisiye-ozel-tasarim',
-    overlay: (
-      <>
-        <path d="M3 17l6-6 4 4 8-8" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M14 7h7v7" strokeLinecap="round" strokeLinejoin="round" />
-      </>
-    ),
-  },
+  // {
+  //   src: 'assets/kisiye-ozel-tasarim.jpeg',
+  //   alt: 'Kişiye Özel Tasarım',
+  //   fallback: '✍️',
+  //   title: 'Kişiye Özel Tasarım',
+  //   text: 'Hayalinizdeki tasarımı aracınıza taşıyarak fark yaratın.',
+  //   path: '/kisiye-ozel-tasarim',
+  //   overlay: (
+  //     <>
+  //       <path d="M3 17l6-6 4 4 8-8" strokeLinecap="round" strokeLinejoin="round" />
+  //       <path d="M14 7h7v7" strokeLinecap="round" strokeLinejoin="round" />
+  //     </>
+  //   ),
+  // },
 ];
 
 /* 14 kart olsun diye diziyi iki kere zincirledim.
