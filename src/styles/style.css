@@ -120,8 +120,14 @@ nav a.active {
   .dropdown-menu{ position:static; display:block; background:transparent; box-shadow:none; padding:0; }
   .dropdown-menu li a{ padding:0; }
 }
-
-
+.dropdown-menu.show {
+  display: block;
+}
+@media (min-width: 900px) {
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+}
 /* Hero Bölümü */
 .hero {
   height: 100vh;
